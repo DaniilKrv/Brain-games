@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/DaniilKrv/frontend-project-lvl1#readme",
   "dependencies": {
-    "node": "^18.7.0"
+    "node": "^18.7.0",
+    "readline-sync": "^1.4.10"
   }
 }

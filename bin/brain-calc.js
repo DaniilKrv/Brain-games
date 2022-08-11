@@ -3,26 +3,31 @@ import readlineSync from 'readline-sync';
 import sayHello from '../src/sayHello.js';
 import getRandomInt from '../src/getRandomNumber.js';
 
-const brainEven = () => {
+const brainCalc = () => {
     console.log('Welcome to the Brain Games!');
     const nameOfGamer = sayHello();
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    console.log('What is the result of the expression?');
     let bool = true;
     let countOfCorrectAnswers = 0;
     let correctAnswer;
     while (bool) {
-        const randomNumber = getRandomInt(-100, 100);
-        console.log('Question: ' + randomNumber);
+        const randomNumber1 = getRandomInt(0, 100);
+        const randomNumber2 = getRandomInt(0, 100);
+        const operators = ["+", "-", "*"];
+        const randomOperator = operators[getRandomInt(0, 2)];
+        console.log('Question: ' + randomNumber1 + ' ' + randomOperator + ' ' +  randomNumber2);
 
-        if (randomNumber % 2 === 0) {
-            correctAnswer = 'yes';
-        } else {
-            correctAnswer = 'no';
+        if (randomOperator === "+") {
+            correctAnswer = randomNumber1 + randomNumber2;
+        } else if (randomOperator === "-") {
+            correctAnswer = randomNumber1 - randomNumber2;
+        } else if (randomOperator === "*") {
+            correctAnswer = randomNumber1 * randomNumber2;
         }
 
         const userAnswer = readlineSync.question('Your answer: ');
 
-        if (userAnswer === correctAnswer) {
+        if (userAnswer == correctAnswer) {
             console.log('Correct!');
             countOfCorrectAnswers += 1;
         } else {
@@ -33,9 +38,8 @@ const brainEven = () => {
         if (countOfCorrectAnswers === 3) {
             console.log("Congratulations, " + nameOfGamer+ "!");
             break;
-        }
-        
+        } 
     }
 };
-export default brainEven;
-brainEven();
+export default brainCalc;
+brainCalc();

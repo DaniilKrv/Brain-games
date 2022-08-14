@@ -28,7 +28,6 @@
   "dependencies": {
     "@eslint/create-config": "github:eslint/create-config",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
     "node": "^18.7.0",
     "readline-sync": "^1.4.10"
   },

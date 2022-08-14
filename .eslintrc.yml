@@ -1,9 +1,27 @@
-env:
-  browser: false
-  es2021: true
+---
+
+plugins:
+  - fp
+
 extends:
-  - airbnb-base
+  - "airbnb-base"
+  - "plugin:fp/recommended"
+
+env:
+  node: true
+  es2020: true
+
 parserOptions:
-  ecmaVersion: latest
-  sourceType: module
-rules: {no-console: off, import/extensions: off}
+  ecmaVersion: 2020
+
+rules:
+  no-console: 0
+  import/extensions: 0
+  no-await-in-loop: 0
+  fp/no-loops: 0
+  fp/no-nil: 0
+  fp/no-unused-expression: 0
+  fp/no-let: 0
+  fp/no-throw: 0
+  fp/no-mutation: 0
+  fp/no-mutating-methods: 0

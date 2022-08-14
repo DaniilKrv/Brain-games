@@ -3,7 +3,7 @@ install:
 publish:
 	npm publish --dry-run
 lint: 
-	npx eslint
+	npx eslint .
 brain-games:
 	node bin/brain-games.js
 brain-even:

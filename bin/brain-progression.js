@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 import sayHello from '../src/sayHello.js';
 import getRandomInt from '../src/getRandomNumber.js';
 
-const progression = () => {
+const Progression = () => {
   console.log('Welcome to the Brain Games!');
   const nameOfGamer = sayHello();
   console.log('What number is missing in the progression?');
@@ -27,7 +27,7 @@ const progression = () => {
     console.log(`Question: ${progression.join(' ')}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer == correctAnswer) {
+    if (userAnswer.toString() === correctAnswer.toString()) {
       console.log('Correct!');
       countOfCorrectAnswers += 1;
     } else {
@@ -41,5 +41,5 @@ const progression = () => {
     }
   }
 };
-export default progression;
-progression();
+export default Progression;
+Progression();

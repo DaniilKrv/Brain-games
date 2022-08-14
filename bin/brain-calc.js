@@ -27,7 +27,7 @@ const brainCalc = () => {
 
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer == correctAnswer) {
+    if (userAnswer.toString() === correctAnswer.toString()) {
       console.log('Correct!');
       countOfCorrectAnswers += 1;
     } else {

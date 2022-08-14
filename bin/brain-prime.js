@@ -4,7 +4,7 @@ import sayHello from '../src/sayHello.js';
 import getRandomInt from '../src/getRandomNumber.js';
 
 function Prime(num) {
-  for (let i = 2; i < num; i++) if (num % i === 0) return false;
+  for (let i = 2; i < num; i += 1) if (num % i === 0) return false;
   return num > 1;
 }
 
@@ -21,13 +21,13 @@ const isPrime = () => {
     const userAnswer = readlineSync.question('Your answer: ');
     correctAnswer = Prime(randomElement);
 
-    if (correctAnswer == true) {
+    if (correctAnswer === true) {
       correctAnswer = 'yes';
     } else {
       correctAnswer = 'no';
     }
 
-    if (userAnswer == correctAnswer) {
+    if (userAnswer.toString() === correctAnswer.toString()) {
       console.log('Correct!');
       countOfCorrectAnswers += 1;
     } else {

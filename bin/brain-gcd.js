@@ -23,7 +23,7 @@ const gcd = () => {
     correctAnswer = NOD(randomNumber1, randomNumber2);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer == correctAnswer) {
+    if (userAnswer.toString() === correctAnswer.toString()) {
       console.log('Correct!');
       countOfCorrectAnswers += 1;
     } else {
